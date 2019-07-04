@@ -7,6 +7,7 @@ const cors = require('cors');
 const app = express();
 const productsRoute = require('./controllers/products');
 const CourseRoute = require('./controllers/course');
+const HomeRoute = require('./controllers/home');
 
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 const db = mongoose.connection;
@@ -20,5 +21,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use('/products', productsRoute);
 app.use('/course', CourseRoute);
+app.use('/', HomeRoute);
 
 app.listen(port, () => console.log('listening to port: ' + port + '...'));
