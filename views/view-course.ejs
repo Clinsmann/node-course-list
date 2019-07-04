@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo Application</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/argon.css">
+</head>
+<body>
+<% include partials/nav.ejs %>
+<div class="container">
+    <div class="tab-content bg-secondary rounded my-4 p-5 clearfix">
+        <% if(!!course) { %>
+            <h4 class="mb-4">Course code : <%= course.code %></h4>
+            <div id="inputs-alternative-component" class="tab-pane tab-example-result fade show active" role="tabpanel"
+                 aria-labelledby="inputs-alternative-component-tab">
+                <div class="card card-shadow float-left w-100">
+                    <div class="card-body">Introduction to : <%= course.title %></div>
+                </div>
+                <a href="/course" class="btn btn-primary d-flex mt-4 float-right">return to list</a>
+            </div>
+        <% } else { %>
+            <h1 class="display-4 text-center text-muted">Ooops! Course not found</h1>
+        <% } %>
+    </div>
+</div>
+<script src="/assets/js/jquery-3.4.1.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+<script src="/assets/js/argon.js"></script>
+<script src="/assets/js/todo-list.js"></script>
+</body>
+</html>
